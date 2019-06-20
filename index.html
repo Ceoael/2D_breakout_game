@@ -1,0 +1,72 @@
+<!-- MDN Breakout game. This game was creacted with tutorial on "https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript" -->
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MDN Breakout Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+        <div class="welcomeScreenContainer">
+                <div class="welcomeScreen">
+                    <div class="tutorial">
+                        <div class="tutorialPaddle animate">
+                            <div class="tutorialPaddleLeft1 animate"></div>
+                            <div class="tutorialPaddleLeft2 animate"></div>
+                            <div class="tutorialPaddleMiddle animate"></div>
+                            <div class="tutorialPaddleRight1 animate"></div>
+                            <div class="tutorialPaddleRight2 animate"></div>   
+                        </div>
+                        <div class="tutorialBall animate"></div>
+                        <div class="tutorialBrick animate"></div>
+                        <div class="tutorialBrick animate"></div>
+                        <div class="tutorialBrick animate"></div>
+                    </div>
+                    <button class="welcomeScreenStartButton">Start</button>
+                </div>
+            </div>
+
+    <div class="gameContainer blur">
+        <div class="stats">
+            <div class="score">SCORE</div>
+            <div class="lives">LIVES</div>
+        </div>
+        <canvas id="myCanvas" width="480" height="320"></canvas>
+        <div class="menu">
+            <button class="restart">Restart</button>
+            <button class="startStop">Stop</button>
+        </div>
+    </div>
+    
+    <div class="endScreenContainer unactive">
+        <div class="endScreen">
+            <div class="endScreenStats">
+                <p>You got <span class="endScreenScore">0</span> points!</p>
+            </div>
+            <div class="endScreenMenu">
+                <p>Play again?</p>
+                <button class="endScreenButtonYes">Yes!
+                </button>
+                <button class="endScreenButtonNo">No :)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/drawCanvas.js"></script>
+    <script src="./scripts/drawPaddle.js"></script>
+    <script src="./scripts/drawBricks.js"></script>
+    <script src="./scripts/drawBall.js"></script>
+    <script src="./scripts/stats.js"></script>
+    <script src="./scripts/collisionDetection.js"></script>
+    <script src="./scripts/drawPaddle.js"></script>
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/randomColor.js"></script>
+    <script src="./scripts/gameOverScreen.js"></script>
+    <script src="./scripts/welcomeScreen.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

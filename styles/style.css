@@ -1,0 +1,477 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+body{
+    background-color: #1f1f1f;
+}
+
+canvas {
+    background-color: #eee;
+}
+
+
+div.gameContainer {
+    
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: 10px auto;
+    background-color: #0095dd;
+}
+
+div.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    color: white;
+    font-size: 18px;
+    
+    padding: 2px 0;
+    background-color: #0095dd;
+}
+
+div.score {
+    width: 30%;   
+}
+
+div.lives {
+    width: 30%;
+    text-align: right; 
+}
+
+div.menu {
+    display: flex;
+    flex-direction: row;
+    
+    background-color: #0095dd;
+    justify-content: space-around; 
+   
+    padding: 4px 0;
+}
+
+button {
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+
+    width: 100px; 
+    height: 30px;
+
+    background-color:#0095dd;
+    border: 2px solid #7fcaee;
+    border-style: none solid;
+    transition: .3s;
+}
+
+button:hover {
+    background-color:#00689a;
+}
+
+/* WELCOME SCREEN */
+div.welcomeScreenContainer, div.endScreenContainer{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    width: 480px;
+    height: 383px;
+
+    margin-top: 10px;
+}
+
+div.welcomeScreen, div.endScreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+
+    margin-top: 50px;
+
+    background-color: rgb(0,149,221);
+    border-radius: 25px;
+    width: 460px;
+    height: 280px;
+}
+
+div.tutorial{
+    width: 300px;
+    height:  200px; 
+    background-color: red;
+
+    margin-top: 10px;
+}
+
+button.welcomeScreenStartButton{
+    font-size: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    height: 45px;
+    margin-top: 10px;
+}
+
+.endScreenMenu{
+    color: white;
+    font-size: 30px;
+    padding-top: 40px;
+
+    text-align: center;
+}
+
+
+.endScreenStats {
+    font-size: 40px;
+    color: white;
+}
+
+.endScreenStats p span {
+    font-size: 45px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.endScreenButtonYes, .endScreenButtonNo{
+    border-radius: 10px;
+    border-style: solid;
+    height:40px;
+    margin-top: 10px;
+}
+
+
+.blur{
+    filter: blur(2px);
+}
+
+.unactive {
+    display: none;
+}
+
+/* TUTORIAL ANIMATION*/
+
+div.tutorial{
+    width: 300px;
+    height:  200px; 
+    background-color: #eee;
+    margin-top: 10px;
+}
+
+div.tutorialPaddle{
+    width: 50px;
+    height: 10px;
+    background-color:#0077b0;
+
+    display: flex;
+
+    position: absolute;
+    top: 206px;
+    left: 200px;
+    animation: paddleAnimation 10s linear infinite;
+}
+
+div.tutorialBall{
+    width: 10px;
+    height: 10px;
+    background-color:#0077b0;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 196px;
+    left: 220px; 
+}
+
+div.tutorialBall.animate{
+    animation: ballAnimation 10s linear infinite;
+}
+
+div.tutorialBrick{
+    width: 50px;
+    height: 15px;
+    background-color:#0077b0;
+    position: absolute;
+}
+
+div.tutorialBrick:nth-of-type(3){
+    top: 100px;
+    left: 200px;
+    z-index: 0;
+}
+
+div.tutorialBrick.animate:nth-of-type(3){
+    animation: firstBrickAnimation 10s linear infinite;
+}
+
+div.tutorialBrick:nth-of-type(4){
+    top: 75px;
+    left: 200px;
+    z-index: 0;
+}
+
+div.tutorialBrick.animate:nth-of-type(4){
+    animation: secondBrickAnimation 10s linear infinite;
+}
+
+div.tutorialBrick:nth-of-type(5){
+    top: 100px;
+    left: 310px;
+    z-index: 0;
+}
+
+div.tutorialBrick.animate:nth-of-type(5){
+    animation: thirdBrickAnimation 10s linear infinite;
+}
+
+div.tutorialPaddleLeft1{
+    width: 10px;
+    height: 10px;
+    background-color: #0077b0;
+}
+
+div.tutorialPaddleLeft1.animate{
+    animation: cornerPaddleAnimation 10s linear infinite;
+}
+
+div.tutorialPaddleLeft2{
+    width: 10px;
+    height: 10px;
+    background-color: #0077b0;
+}
+
+div.tutorialPaddleLeft2.animate{
+    animation: sideSpeedPaddleAnimation 10s linear infinite;
+}
+div.tutorialPaddleMiddle{
+    width: 10px;
+    height: 10px;
+    background-color: #0077b0;
+}
+
+div.tutorialPaddleMiddle.animate{
+    animation: middlePaddleAnimation 10s linear infinite;
+}
+
+div.tutorialPaddleRight1{
+    width: 10px;
+    height: 10px;
+    background-color: #0077b0;
+}
+
+div.tutorialPaddleRight1.animate{
+    animation: sideSpeedPaddleAnimation 10s linear infinite;
+}
+
+div.tutorialPaddleRight2{
+    width: 10px;
+    height: 10px;
+    background-color: #0077b0;
+}
+
+div.tutorialPaddleRight2.animate{
+    animation: cornerPaddleAnimation 10s linear infinite;
+}
+
+@keyframes firstBrickAnimation{
+    0%{
+        z-index: 0;
+    }
+    
+    16%{
+        z-index: 0;
+    }
+    
+    16.1%{
+        z-index: -1;
+    }
+    
+    100%{
+        z-index: -1;
+    }
+    
+}
+
+@keyframes secondBrickAnimation{
+    0%{
+        z-index: 0;
+    }
+    
+    51%{
+        z-index: 0;
+    }
+
+    51.1%{
+        z-index: -1;
+    }
+
+    100%{
+        z-index: -1;
+    }
+    
+}
+
+@keyframes thirdBrickAnimation{
+    0%{
+        z-index: 0;
+    }
+
+    85%{
+         z-index: 0;
+    }
+
+    85.1%{
+        z-index: -1;
+    }
+
+    100%{
+        z-index: -1;
+    }
+    
+}
+
+@keyframes paddleAnimation{
+    0%{
+        left: 200px;
+    }
+    
+    60%{
+        left: 200px;
+    }
+
+    65%{
+        left: 188px;
+    }
+    
+    70%{
+        left: 190px;
+    }
+    
+    90%{
+        left: 330px;
+    }
+    
+    100%{
+        left: 330px;
+    }
+}
+
+@keyframes middlePaddleAnimation{
+    0%{
+        background-color: #0077b0;
+    }
+    
+    32.9%{
+        background-color: #0077b0;
+    }
+
+    33%{
+        background-color: red;
+    }
+    38%{
+        background-color: red;
+    }
+    
+    45%{
+        background-color: #0077b0;
+    }
+    
+}
+
+@keyframes sideSpeedPaddleAnimation{
+    0%{
+        background-color: #0077b0;
+    }
+    
+    69.9%{
+        background-color: #0077b0;
+    }
+
+    70%{
+        background-color: red;
+    }
+    75%{
+        background-color: red;
+    }
+    
+    82%{
+        background-color: #0077b0;
+    }
+    
+}
+
+@keyframes cornerPaddleAnimation{
+    0%{
+        background-color: #0077b0;
+    }
+    
+    94.9%{
+        background-color: #0077b0;
+    }
+
+    95%{
+        background-color: red;
+    }
+
+    100%{
+        background-color: red;
+    }
+    
+}
+
+@keyframes ballAnimation{
+0%{
+    top: 196px;
+    left: 220px;
+}
+
+16%{
+    top: 115px;
+    left: 220px;
+}
+
+32%{
+    top: 196px;
+    left: 220px;
+}
+
+51%{
+    top: 90px;
+    left: 220px;
+}
+
+70%{
+    top: 196px;
+    left: 220px;
+}
+
+85%{
+    top: 115px;
+    left: 335px;
+}
+
+89%{
+    top: 140px;
+    left: 372px;
+}
+
+95%{
+    top: 196px;
+    left: 330px;
+}
+
+100%{
+    top: 150px;
+    left: 80px;
+}
+
+}
