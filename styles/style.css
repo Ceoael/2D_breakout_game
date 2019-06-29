@@ -14,6 +14,19 @@ canvas {
     background-color: #eee;
 }
 
+.noselect {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+  }
+
+div.appContainer{
+    position: relative;
+    
+}
 
 div.gameContainer {
     
@@ -73,17 +86,12 @@ button:hover {
     background-color:#00689a;
 }
 
-/* WELCOME SCREEN */
 div.welcomeScreenContainer, div.endScreenContainer{
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
-
-    width: 480px;
-    height: 383px;
-
+    z-index: 2;
     margin-top: 10px;
 }
 
@@ -94,25 +102,21 @@ div.welcomeScreen, div.endScreen{
     align-items: center;
 
     position: absolute;
-    top: 0;
+    top: 36px;
     left: 50%;
     transform: translateX(-50%);
     
-
-    margin-top: 50px;
-
     background-color: rgb(0,149,221);
+    
     border-radius: 25px;
-    width: 460px;
+    width: 300px;
     height: 280px;
+    
 }
 
 div.tutorial{
     width: 300px;
-    height:  200px; 
-    background-color: red;
-
-    margin-top: 10px;
+    height:  200px;  
 }
 
 button.welcomeScreenStartButton{
@@ -135,6 +139,7 @@ button.welcomeScreenStartButton{
 .endScreenStats {
     font-size: 40px;
     color: white;
+    text-align: center;
 }
 
 .endScreenStats p span {
@@ -474,4 +479,66 @@ div.tutorialPaddleRight2.animate{
     left: 80px;
 }
 
+}
+
+/* TOUCH SCREEN PANEL */
+
+div.touchScreenControl{
+   
+    display: flex;
+    justify-content: space-between;
+    max-width: 480px;
+    height: 40vh;
+    margin: 0 auto;
+
+    font-size: 100px;
+    line-height: 20vh;
+    color: #777777;
+}
+
+div.left{
+    flex-grow: 1;
+    padding-left: 10vw ;
+}
+
+div.right{
+    flex-grow: 1;
+    text-align: end;
+    padding-right: 10vw ;
+}
+
+@media (orientation:landscape) and (max-height:375px){
+    canvas {
+        height: 75vh;
+    }
+
+    div.welcomeScreen, div.endScreen{
+      
+        top: 9vh;
+        height: 65vh;
+    }
+
+    div.touchScreenControl{
+        position:absolute;
+        top:26px;
+        left:50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        height: 75vh;
+        line-height: 75vh;
+        max-width: 95vw;
+        width: 95vw;
+    }
+
+    div.right{
+        padding-right: 3vw ;
+    }
+
+    div.left{
+        padding-left: 3vw ;
+    }
+}
+
+div.touchScreenControl.unactive{
+    display: none;
 }
