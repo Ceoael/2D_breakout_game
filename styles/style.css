@@ -114,10 +114,6 @@ div.welcomeScreen, div.endScreen{
     
 }
 
-div.tutorial{
-    width: 300px;
-    height:  200px;  
-}
 
 button.welcomeScreenStartButton{
     font-size: 25px;
@@ -167,10 +163,10 @@ button.welcomeScreenStartButton{
 /* TUTORIAL ANIMATION*/
 
 div.tutorial{
-    width: 300px;
-    height:  200px; 
+    width: 90%;
+    height:  72%; 
     background-color: #eee;
-    margin-top: 10px;
+    margin-top: 3%;
 }
 
 div.tutorialPaddle{
@@ -181,8 +177,11 @@ div.tutorialPaddle{
     display: flex;
 
     position: absolute;
-    top: 206px;
-    left: 200px;
+    /* top: 206px;
+    left: 200px; */
+    top: 73%;
+    left: 50%;
+    transform: translateX(-50%);
     animation: paddleAnimation 10s linear infinite;
 }
 
@@ -193,8 +192,9 @@ div.tutorialBall{
     border-radius: 10px;
 
     position: absolute;
-    top: 196px;
-    left: 220px; 
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 div.tutorialBall.animate{
@@ -209,8 +209,9 @@ div.tutorialBrick{
 }
 
 div.tutorialBrick:nth-of-type(3){
-    top: 100px;
-    left: 200px;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 0;
 }
 
@@ -219,8 +220,9 @@ div.tutorialBrick.animate:nth-of-type(3){
 }
 
 div.tutorialBrick:nth-of-type(4){
-    top: 75px;
-    left: 200px;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 0;
 }
 
@@ -229,8 +231,9 @@ div.tutorialBrick.animate:nth-of-type(4){
 }
 
 div.tutorialBrick:nth-of-type(5){
-    top: 100px;
-    left: 310px;
+    top: 38%;
+    left: 83%;
+    transform: translateX(-50%);
     z-index: 0;
 }
 
@@ -346,27 +349,31 @@ div.tutorialPaddleRight2.animate{
 
 @keyframes paddleAnimation{
     0%{
-        left: 200px;
+        left: 50%;
     }
     
     60%{
-        left: 200px;
+        left: 50%;
     }
 
     65%{
-        left: 188px;
+        /* left: 188px; */
+        left: 46%;
     }
     
     70%{
-        left: 190px;
+        /* left: 190px; */
+        left: 46%;
     }
     
     90%{
-        left: 330px;
+        /* left: 330px; */
+        left: 85%;
     }
     
     100%{
-        left: 330px;
+        /* left: 330px; */
+        left: 85%;
     }
 }
 
@@ -435,48 +442,49 @@ div.tutorialPaddleRight2.animate{
 
 @keyframes ballAnimation{
 0%{
-    top: 196px;
-    left: 220px;
+    top: 70%;
+    left: 50%;
 }
 
 16%{
-    top: 115px;
-    left: 220px;
+    top: 43%;
+    left: 50%;
 }
 
 32%{
-    top: 196px;
-    left: 220px;
+    top: 70%;
+    left: 50%;
 }
 
 51%{
-    top: 90px;
-    left: 220px;
+    top: 32%;
+    left: 50%;
 }
 
 70%{
-    top: 196px;
-    left: 220px;
+    top: 70%;
+    left: 50%;
+   
 }
 
 85%{
-    top: 115px;
-    left: 335px;
+    top: 43%;
+    left: 83%;
 }
 
 89%{
-    top: 140px;
-    left: 372px;
+    top: 54%;
+    left: 94%;
 }
 
 95%{
-    top: 196px;
-    left: 330px;
+    top: 70%;
+    left: 78%;
 }
 
 100%{
-    top: 150px;
-    left: 80px;
+    top: 54%;
+    left: 5%;
 }
 
 }
@@ -516,6 +524,15 @@ div.right{
       
         top: 9vh;
         height: 65vh;
+    }
+
+    div.tutorial{
+        margin-top: 8%;
+    }
+
+    button.welcomeScreenStartButton{
+        height: 35px;
+        margin: 1.5% 0;
     }
 
     div.touchScreenControl{
